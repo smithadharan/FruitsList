@@ -15,14 +15,22 @@ class Router: ViewControllerCreateProtocol, NavigationProtocol {
     required init(with createNewComponent: CreateNewComponent) {
         fruitsListRouter = createNewComponent.create()
     }
-
+    
+    /// set Root ViewController while loading the app
+    /// - Parameters:
+    ///   - window: window
+    ///   - createNewComponent: viewController created for  based on the selection
+    /// - Returns: window
     func setRootViewController(to window: UIWindow, createNewComponent: CreateNewComponent) -> UIWindow {
         let viewController = fruitsListRouter.fruitsViewController(with: createNewComponent)
         window.rootViewController = rootNavigationController(rootViewController: viewController)
         window.makeKeyAndVisible()
         return window
     }
-
+    
+    /// set up the root navigation viewcontroller
+    /// - Parameter rootViewController: rootViewController
+    /// - Returns: controller
     private func rootNavigationController(rootViewController: UIViewController) -> UINavigationController {
         let controller = UINavigationController(rootViewController: rootViewController)
         controller.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.gray]

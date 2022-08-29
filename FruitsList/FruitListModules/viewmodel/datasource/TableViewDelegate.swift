@@ -17,7 +17,8 @@ class TableViewDelegate: NSObject, UITableViewDelegate {
         didSelectRowAt.onNext(indexPath)
     }
     
-
+    /// asObservable for the didselect row event
+    /// - Returns: Observable
     func didSelectRow() -> Observable<IndexPath> {
         return didSelectRowAt.asObservable()
     }

@@ -28,13 +28,16 @@ class FruitTableViewCell:  UITableViewCell, TableViewCellProtocol {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-
+    
+    /// configure the TableviewCell UI
+    /// - Parameter tableViewItem: TableViewItem
     func configureCell(with tableViewItem: TableViewItem) {
         let fruit = tableViewItem as! FruitDataModel
         resetContent()
         fruitName.text = fruit.fruitName().capitalized       
     }
-
+    
+    /// reset the fruitname 
     private func resetContent() {
         fruitName.text = nil
     }

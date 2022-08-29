@@ -34,7 +34,8 @@ class DetailedViewController: UIViewController, ChangeControllerProtocol {
         super.viewDidAppear(animated)
         fruitDetailViewModel.logDisplayEvent()
     }
-
+    
+    /// subscribe the events to setup the UI with the fruit data
     private func subscribe() {
         fruitDetailViewModel.fruitDetail()
             .subscribe(onNext: { [weak self] fruit in
@@ -42,6 +43,7 @@ class DetailedViewController: UIViewController, ChangeControllerProtocol {
             }).disposed(by: disposeBag)
     }
 
+    /// setUp  the UI Detailed page 
     func setUp(detail: FruitDetailsViewProtocol) {
         priceLabel.text = detail.priceInPoundsAndPencesFormatted()
         weightLabel.text = detail.weightInKilogramsFormatted()

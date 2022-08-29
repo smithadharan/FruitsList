@@ -28,6 +28,7 @@ class FruitsListViewModel: ViewModel, AnalyticsDataTrackable {
         subscribe()
     }
 
+    /// Subscribe method will call the tableviewDelegate method  on next event it will return fruit details to delegate and Router will be called detailedviewController
     func subscribe() {
         delegate.didSelectRow()
             .map { self.findFruit(at: $0) }
@@ -36,7 +37,9 @@ class FruitsListViewModel: ViewModel, AnalyticsDataTrackable {
                 self.fruitDetailRouter.showFruitDetail(createNewComponent: self.createNewComponent, fruit: fruit)
             }).disposed(by: disposeBag)
     }
-
+    
+    /// loadFruits method will return the observable which observes from the Api response .
+    /// - Returns: FruitsDataRequest
     func loadFruits() -> Observable<Void> {
         return fruitListServices.findAllFruits(with: FruitsDataRequest())
             .observeOn(MainScheduler.instance)
@@ -55,23 +58,31 @@ class FruitsListViewModel: ViewModel, AnalyticsDataTrackable {
         return analyticsTracker
     }
 
+    /// DisposableBag method is responsible to remove all containers which is not used by the subscriber
+    /// - Returns: DisposeBag
     func rxDisposeBag() -> DisposeBag {
         return disposeBag
     }
 
+    /// FindFruit
+    /// - Parameter indexPath: selected indexpath
+    /// - Returns: FruitDataModel
     private func findFruit(at indexPath: IndexPath) -> FruitDataModel {
         return dataSource.findItem(at: indexPath) as! FruitDataModel
     }
 
+    /// while Loading networkActivitity indicator shows
     private func onLoadFruitsStarted() {
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
     }
 
+    /// Emitting the event suucess then PublishSubject will be call next event
     private func onLoadFruitsCompleted() {
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
         reloadData.onNext(())
     }
 
+    /// Emitting the event failiure then emits the error event message isNetworkActivityIndicatorVisible will not show
     private func onLoadFruitsCompletedWithError() {
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
     }

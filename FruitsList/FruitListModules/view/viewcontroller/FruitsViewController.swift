@@ -16,7 +16,8 @@ class FruitsViewController: UIViewController, ChangeControllerProtocol {
         return self.viewModel as! FruitsListViewModel
     }()
     var viewModel: ViewModel!
-
+    
+    /// viewDidLoad when loads loadFruits method will call and initalte the process
     override func viewDidLoad() {
         super.viewDidLoad()
         fruitsListViewModel.setDisplayStartDateNow()
@@ -26,7 +27,8 @@ class FruitsViewController: UIViewController, ChangeControllerProtocol {
             .subscribe()
             .disposed(by: disposeBag)
     }
-
+    
+    /// SetUp UI
     private func setUp() {
         setUpTableView()
         setUpNavigationBarTitle()
@@ -37,6 +39,7 @@ class FruitsViewController: UIViewController, ChangeControllerProtocol {
         fruitsListViewModel.logDisplayEvent()
     }
 
+    /// subscribe the events to initalte the mainScheduler with instance and reload Tableview
     func subscribe() {
         fruitsListViewModel.reloadData
             .asObservable()
@@ -45,13 +48,15 @@ class FruitsViewController: UIViewController, ChangeControllerProtocol {
                 self?.tableView.reloadData()
             }).disposed(by: disposeBag)
     }
-
+    
+    /// setUpTableView delegate and dataSource
     private func setUpTableView() {
         tableView.dataSource = fruitsListViewModel.dataSource
         tableView.delegate = fruitsListViewModel.delegate
 
     }
 
+    /// setUpNavigationBarTitle
     private func setUpNavigationBarTitle() {
         navigationItem.title = "Fruits List"
     }

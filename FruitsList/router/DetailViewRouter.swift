@@ -9,7 +9,12 @@
 import UIKit
 
 class DetailViewRouter: ViewControllerCreateProtocol, NavigationProtocol {
-
+    
+    /// Shows the fruit details
+    /// - Parameters:
+    ///   - createNewComponent: CreateNewComponent
+    ///   - fruit: FruitDetailsViewProtocol
+    ///   - animated: animated
     func showFruitDetail(
         createNewComponent: CreateNewComponent,
         fruit: FruitDetailsViewProtocol,
