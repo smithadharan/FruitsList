@@ -19,6 +19,7 @@ class FruitTableViewCell:  UITableViewCell, TableViewCellProtocol {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        fruitName.isAccessibilityElement = true
     }
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {

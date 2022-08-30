@@ -11,13 +11,16 @@
         <!--Detailed View Controller-->
         <scene sceneID="q54-k6-51R">
             <objects>
-                <viewController storyboardIdentifier="DetailedViewController" id="BaP-bu-ZoM" customClass="DetailedViewController" customModule="FruitApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailedViewController" id="BaP-bu-ZoM" customClass="DetailedViewController" customModule="FruitsList" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Dq1-bH-QpT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SId-up-Tp6">
                                 <rect key="frame" x="20" y="10" width="335" height="215"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sYe-hF-PRO" userLabel="priceLabel">
                                 <rect key="frame" x="144" y="459" width="183" height="50"/>

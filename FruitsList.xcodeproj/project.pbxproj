@@ -110,6 +110,7 @@
 		1619AC9F28AA852E004FA769 /* FruitTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FruitTableViewCell.xib; sourceTree = "<group>"; };
 		1619ACA228AAA3B9004FA769 /* NutrionInfoProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutrionInfoProtocol.swift; sourceTree = "<group>"; };
 		1619ACA528AAA707004FA769 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		162B670328BD2785003F2A13 /* RxSwift.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = RxSwift.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		1656A707E55092F8F91809EF /* Pods-FruitsListTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FruitsListTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FruitsListTests/Pods-FruitsListTests.debug.xcconfig"; sourceTree = "<group>"; };
 		47CA974D92D0760DDE3420EB /* Pods_FruitsList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FruitsList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		570258C721E93734D14263FB /* Pods-FruitsList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FruitsList.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FruitsList/Pods-FruitsList.debug.xcconfig"; sourceTree = "<group>"; };
@@ -326,6 +327,7 @@
 				B6B2C4C520D85AC20057ABD9 /* utility */,
 				B6B2C48D20D84A8E0057ABD9 /* SupportFiles */,
 				B680833D20D846D00090362C /* Info.plist */,
+				162B670328BD2785003F2A13 /* RxSwift.playground */,
 			);
 			path = FruitsList;
 			sourceTree = "<group>";

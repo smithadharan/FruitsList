@@ -28,11 +28,20 @@ class DetailedViewController: UIViewController, ChangeControllerProtocol {
         super.viewDidLoad()
         fruitDetailViewModel.setDisplayStartDateNow()
         subscribe()
+        setUpAccessability()
+
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         fruitDetailViewModel.logDisplayEvent()
+    }
+    
+    func setUpAccessability(){
+        fImage.isAccessibilityElement = true
+        let imagename = Constants.fruitDesc + fruitName.text!
+        fImage.accessibilityHint = imagename
+
     }
     
     /// subscribe the events to setup the UI with the fruit data

@@ -23,6 +23,8 @@ struct Constants {
     static let pitayaNutrionInfo = "In one 6-ounce serving of pitaya fruit cubes, you'll get: Calories: 102, Fat: 0 gram ,Protein: 2 grams, Carbohydrates: 22 grams ,Fiber: 5 grams,Sugars: 13 grams"
     
     static let kiwiNutrionInfo = "One medium-sized kiwi (75g) provides 42 calories, 0.1g of protein, 10.1g of carbohydrates, and 0.4g of fat. Kiwis are an excellent source of vitamin C, fiber, and potassium."
+    
+    static let fruitDesc = "The image represents fruit"
 }
 
 
